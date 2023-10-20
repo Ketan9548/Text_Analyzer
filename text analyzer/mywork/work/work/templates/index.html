@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome my side</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+      #center{
+        margin: auto;
+        width: 20%;
+        padding: 2px;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="bg-primary-subtle">
+    <h1><p class="text-center">Welcome To Text Analyzer</p></h1>
+  </div>
+  <form action = '/analyze' method = 'POST' >
+    {% csrf_token %}
+    <h4>Enter Your Text Here</h4>
+    <textarea name='text' style='margin: 2px; padding :2px; width:1274px; height:200px;'></textarea>
+    <div class="form-check form-switch" id="center">
+      <input class="form-check-input" type="checkbox" name="removepunc">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Remove Punctuations </label>
+    </div>
+    <div class="form-check form-switch" id="center">
+      <input class="form-check-input" type="checkbox" name="fullcaps">
+      <label class="form-check-label" for="flexSwitchCheckDefault"> UPPERCASE </label>
+    </div>
+    <div class="form-check form-switch" id="center">
+      <input class="form-check-input" type="checkbox" name="newlineremove">
+      <label class="form-check-label" for="flexSwitchCheckDefault">New Line Remove </label>
+    </div>
+    <div class="form-check form-switch" id="center">
+      <input class="form-check-input" type="checkbox" name="extraspaceremover">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Extra Space Remover </label>
+    </div>
+    <div class="form-check form-switch" id="center">
+      <input class="form-check-input" type="checkbox" name="CountChar">
+      <label class="form-check-label" for="flexSwitchCheckDefault"> Counting the Characters </label>
+    </div>
+    <div id="center">
+      <button type="submit" class="btn btn-dark mt-2">Analyze Text</button>
+    </div>
+  </form>
+  <div>
+    {% comment %} <h1>{{Company}}</h1>
+    <h1>{{Salary}}</h1>
+  </div>
+  <h1>Hello Kapil</h1> {% endcomment %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
